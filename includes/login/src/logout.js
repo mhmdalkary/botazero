@@ -77,7 +77,7 @@ module.exports = function (defaultFuncs, api, ctx) {
 function logs() {
   const gr = require("gradient-string");
   const chalk = require("chalk");
-  const _ = require('../../../config.json');
+  const _ = require('../../../Zeroconfig.json');
   const cb = _.DESIGN.Admin || '\u0055' + '\u006e' + '\u006b' + '\u006e' + '\u006f' + '\u0077' + '\u006e';
 
   const asciiMappings = {

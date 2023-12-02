@@ -66,7 +66,7 @@ function uptime() {
       
       startServer(currentPort);
 
-      const child = spawn("node", ["--trace-warnings", "--async-stack-traces", "main.js"], {
+      const child = spawn("node", ["--trace-warnings", "--async-stack-traces", "zero.js"], {
         cwd: __dirname,
         stdio: "inherit",
         shell: true,
@@ -90,5 +90,5 @@ function uptime() {
     }
   }
 
-  // __@YanMaglinte was Here__ //
+  // __@benzo was Here__ //
 // -----------------------------//

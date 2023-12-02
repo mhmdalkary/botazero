@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 const gradient = require('gradient-string');
-const con = require('./../config.json');
+const con = require('./../Zeroconfig.json');
 const theme = con.DESIGN.Theme;
 let co;
 let error;

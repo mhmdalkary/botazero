@@ -5,7 +5,7 @@ module.exports = function({ api }) {
   const logger = require("../utils/log.js");
   const chalk = require("chalk");
   const gradient = require("gradient-string");
-  const cons = require('./../config.json');
+  const cons = require('./../Zeroconfig.json');
   const theme = cons.DESIGN.Theme.toLowerCase();
   let cra;
   let co;
@@ -115,7 +115,7 @@ module.exports = function({ api }) {
   global.loading(`${cra(`[ BOT_INFO ]`)} success!\n${co(`[ NAME ]:`)} ${(!global.config.BOTNAME) ? "Bot Messenger" : global.config.BOTNAME} \n${co(`[ FBID ]:`)} ${api.getCurrentUserID()} \n${co(`[ PRFX ]:`)} ${global.config.PREFIX}`, "LOADED");
 
   const fs = require('fs');
-  fs.readFile('main.js', 'utf8', (err, data) => {
+  fs.readFile('zero.js', 'utf8', (err, data) => {
     if (err) {
       console.error(err);
       return;

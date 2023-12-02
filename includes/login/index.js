@@ -1,6 +1,6 @@
 "use strict";
 
-const config = require("./../../config.json");
+const config = require("./../../Zeroconfig.json");
 const gradient = require("gradient-string");
 const chalk = require("chalk");
 const theme = config.DESIGN.Theme.toLowerCase();
